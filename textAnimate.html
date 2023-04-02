@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Animate</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            gap: 15px;
+            overflow: hidden;
+        }
+        .container{
+            width: 300px;
+            overflow: hidden;
+        }
+        .first-text{
+            color: #fff;
+        }
+        .text{
+            font-size: 2rem;
+            position: relative;
+        }
+        .text-animate{
+            color: orange;
+        }
+        .text-animate::before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            border-left: 2px solid orange;
+            background: #000;
+            animation: text-animate 4s steps(10) infinite;
+        }
+        @keyframes text-animate{
+            40%,60%{
+                left: calc(100% + 4px);
+            }
+            80%,100%{
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="text first-text">I'm a</span>
+        <span class="text text-animate"></span>
+    </div>
+    <script>
+        const changeText = ()=>{
+            setTimeout(()=>{
+            document.querySelector(".text-animate")
+            .textContent = "Developer"
+            },0)
+            setTimeout(()=>{
+                document.querySelector(".text-animate")
+                .textContent = "Freelancer"
+            },4000)
+            setTimeout(()=>{
+                document.querySelector(".text-animate")
+                .textContent = "Student"
+            },8000)
+        }
+        changeText()
+        setInterval(changeText,12000)
+    </script>
+</body>
+</html>

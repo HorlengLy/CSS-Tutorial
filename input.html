@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="./inputForm.css">
+</head>
+<body>
+    <div class="container">
+        <span class="login">Login</span>
+        <form action="#">
+            <div class="cover">
+                <input type="text" id="email" required>
+                <label for="email" id="email-label">Email</label>
+            </div>
+            <div class="cover">
+                <input type="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="remem-letter">
+                <span>
+                    <input type="checkbox" checked>
+                    Remember me
+                </span>
+                <a href="#">Forget password?</a>
+            </div>
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+        <span class="create-acc">
+            Don't have account yet ?
+            <a href="#">Create one</a>
+        </span>
+    </div>
+</body>
+</html>
